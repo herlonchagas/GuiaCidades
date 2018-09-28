@@ -2,7 +2,7 @@
 <ion-header no-border>
 
   <ion-navbar transparent>
-    
+
   </ion-navbar>
 
 </ion-header>
@@ -14,7 +14,7 @@
       [ngStyle]="{'background-image': 'url('+ item +')'}">
     </ion-slide>
   </ion-slides>
-  
+
   <div class="login-container">
     <form padding [formGroup]="loginForm" (submit)="login()" novalidate>
       <ion-item>
@@ -25,14 +25,15 @@
       </ion-item>
       <button ion-button block outline color="light" [disabled]="!loginForm.valid" class="login-button">Login</button>
     </form>
-
+    <br>
     <div class="strike">
       <span>OU</span>
     </div>
-    <button ion-button block outline color="light" class="login-button" (click)="facebookLogin()">
+    <br>
+    <button ion-button icon-left block outline  color="light" class="login-button" (click)="facebookLogin()">
       <ion-icon name="logo-facebook"></ion-icon>Login com Facebook
     </button>
-
+    <br> <br> <br> <br>
     <div (click)="goToSignup()">
       <span>Ainda não possui conta? <button ion-button block outline color="light" class="login-button">Cadastra-se</button> </span>
     </div>

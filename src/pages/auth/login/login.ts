@@ -18,7 +18,7 @@ export class LoginPage {
   ]
 
   public loginForm : any;
-  constructor(public formBuilder: FormBuilder, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public formBuilder: FormBuilder, public nav: NavController, public navParams: NavParams) {
     this.loginForm = formBuilder.group({
       email: [ '', Validators.required],
       password: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(20), Validators.required])]
@@ -28,6 +28,10 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  goToSignup(){
+    this.nav.push('SignupPage');
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { FormBuilder, Validators} from "@angular/forms";
 
 @IonicPage()
 @Component({
@@ -17,11 +18,19 @@ export class SignupPage {
     'assets/imgs/background/background-5.jpg'
   ]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  signupForm: any;
+
+  constructor(public formBuider, public nav: NavController, public navParams: NavParams) {
+    this.formBuider = formBuider.group({
+      email: ['', Validators.required],
+      password: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(20), Validators.required])],
+      passwordConfirmation: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(20), Validators.required])],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required]
+    })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
-
 }
